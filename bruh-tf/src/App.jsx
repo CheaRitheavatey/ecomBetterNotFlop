@@ -1,16 +1,16 @@
 import CategoryNavigation from "./component/CategoryNavigation";
 import Footer from "./component/Footer";
 import Header from "./component/Header";
+import HeroSection from "./component/HeroSection";
 
 function App() {
   return (
     <div>
       <Header/>
-      {/* <h1>This is header</h1> */}
       <CategoryNavigation></CategoryNavigation>
+      <HeroSection/>
       <Footer />
     </div>
   );
 }
-
 export default App;
