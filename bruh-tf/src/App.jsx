@@ -20,30 +20,28 @@ function App() {
     filteredProducts,
     featuredProducts
   } = useProducts();
+
   return (
-    <div>
-      <Header
+    <div className="min-h-screen bg-gray-50">
+      <Header 
         searchTerm={searchTerm}
         setSearchTerm={setSearchTerm}
-        showFilter={showFilters}
-        setShowFilter={setShowFilters}
-        />
-
-      <HeroSection
-        setSelectedCategory={setSelectedCategory}
+        showFilters={showFilters}
+        setShowFilters={setShowFilters}
       />
+
+      <HeroSection setSelectedCategory={setSelectedCategory} />
 
       {selectedCategory === CATEGORIES.ALL && (
         <FeaturedProducts products={featuredProducts} />
       )}
-      
-      <CategoryNavigation
+
+      <CategoryNavigation 
         selectedCategory={selectedCategory}
         setSelectedCategory={setSelectedCategory}
-      ></CategoryNavigation>
+      />
 
-
-      <ProductsGrid
+      <ProductsGrid 
         products={filteredProducts}
         selectedCategory={selectedCategory}
       />
@@ -52,4 +50,5 @@ function App() {
     </div>
   );
 }
+
 export default App;

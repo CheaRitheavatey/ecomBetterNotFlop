@@ -1,7 +1,7 @@
 import { MapPin, Star, MessageCircle } from 'lucide-react';
 import { handleTelegramContact } from '../utils/telegram.js';
 
-function ProductCard({ product, featured =false }) {
+const ProductCard = ({ product, featured = false }) => {
   return (
     <div className="bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden group hover:-translate-y-1">
       <div className="relative overflow-hidden">
@@ -87,6 +87,6 @@ function ProductCard({ product, featured =false }) {
       </div>
     </div>
   );
-}
+};
 
 export default ProductCard;
