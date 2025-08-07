@@ -1,5 +1,7 @@
 # ecomBetterNotFlop
 
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+
 1. Create a new Vite + React project
    bash
    Copy code
