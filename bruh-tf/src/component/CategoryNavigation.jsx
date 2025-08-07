@@ -10,11 +10,12 @@ const CategoryNavigation = ({ selectedCategory, setSelectedCategory }) => {
             <button
               key={category.id}
               onClick={() => setSelectedCategory(category.id)}
-              className={`flex items-center space-x-2 px-6 py-3 rounded-xl font-medium transition-all duration-200 ${
-                selectedCategory === category.id
-                  ? 'bg-emerald-600 text-white shadow-lg scale-105'
-                  : 'bg-white text-gray-600 hover:bg-gray-50 hover:text-emerald-600 shadow-sm'
-              }`}
+              className={`flex items-center gap-2 px-6 py-3 rounded-xl font-medium transition-all duration-200
+                ${selectedCategory === category.id
+                  ? 'bg-emerald-600 text-white shadow-md scale-105'
+                  : 'bg-white text-black-600 border border-gray-200 hover:border-emerald-400 hover:text-emerald-600'}
+              `}
+
             >
               <Icon className="w-4 h-4" />
               <span>{category.name}</span>
