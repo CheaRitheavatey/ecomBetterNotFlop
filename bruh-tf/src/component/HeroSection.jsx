@@ -12,7 +12,7 @@ const HeroSection = ({ setSelectedCategory }) => {
             Connect directly with rural producers and discover authentic, handcrafted products from local artisans and farmers.
           </p>
           <div className="hero-categories">
-            {categories.slice(1).map((category) => {
+            {categories.map((category) => {
               const Icon = category.icon;
               return (
                 <button

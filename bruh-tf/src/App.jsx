@@ -18,7 +18,6 @@ function App() {
     searchTerm,
     setSearchTerm,
     filteredProducts,
-    featuredProducts
   } = useProducts();
 
   return (
@@ -32,14 +31,14 @@ function App() {
 
       <HeroSection setSelectedCategory={setSelectedCategory} />
 
-      {selectedCategory === CATEGORIES.ALL && (
+      {/* {selectedCategory === CATEGORIES.ALL && (
         <FeaturedProducts products={featuredProducts} />
-      )}
+      )} */}
 
-      <CategoryNavigation 
+      {/* <CategoryNavigation 
         selectedCategory={selectedCategory}
         setSelectedCategory={setSelectedCategory}
-      />
+      /> */}
 
       <ProductsGrid 
         products={filteredProducts}
