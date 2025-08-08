@@ -18,6 +18,7 @@ function App() {
     searchTerm,
     setSearchTerm,
     filteredProducts,
+    featuredProducts
   } = useProducts();
 
   return (
