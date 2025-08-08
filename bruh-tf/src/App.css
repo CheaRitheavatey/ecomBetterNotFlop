@@ -609,3 +609,174 @@ body {
   width: 1rem;
   height: 1rem;
 }
+
+
+/* Footer section */
+.footer {
+  background-color: #333446;
+  color: white;
+}
+
+.footer-container {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 3rem 1rem;
+}
+
+@media (min-width: 640px) {
+  .footer-container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .footer-container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+/* Footer Grid Layout */
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .footer-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.footer-about {
+  grid-column: span 2;
+}
+
+/* Branding Section */
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.footer-logo {
+  width: 2rem;
+  height: 2rem;
+  background-color: #7F8CAA;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-logo-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  color: white;
+}
+
+.footer-brand-name {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.footer-description {
+  color: rgba(234, 239, 239, 0.5);
+  margin-bottom: 1rem;
+  max-width: 28rem;
+}
+
+/* Contact Information */
+.footer-contact-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: rgba(234, 239, 239, 0.5);
+}
+
+.contact-icon {
+  width: 1rem;
+  height: 1rem;
+}
+
+.contact-text {
+  font-size: 0.875rem;
+}
+
+/* Links Section */
+.footer-heading {
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.footer-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.footer-link {
+  color: rgba(234, 239, 239, 0.5);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-link:hover {
+  color: white;
+}
+
+/* Sellers Section */
+.seller-text {
+  color: rgba(234, 239, 239, 0.5);
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+}
+
+.seller-button {
+  background-color: #7F8CAA;
+  color: white;
+  border: none;
+  border-radius: 9999px;
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background-color 0.2s ease;
+}
+
+.seller-button:hover {
+  background-color: #EAEFEF;
+  color: #333446;
+}
+
+.button-icon {
+  width: 1rem;
+  height: 1rem;
+}
+
+/* Copyright Section */
+.footer-copyright {
+  border-top: 1px solid black;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  text-align: center;
+  color: rgba(234, 239, 239, 0.5);
+}
+
+.footer-copyright p {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}

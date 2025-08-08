@@ -2,54 +2,54 @@ import { MapPin, MessageCircle, Mail, Phone } from 'lucide-react';
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          <div className="md:col-span-2">
-            <div className="flex items-center space-x-3 mb-4">
-              <div className="w-8 h-8 bg-emerald-600 rounded-lg flex items-center justify-center">
-                <MapPin className="w-5 h-5 text-white" />
+    <footer className="footer">
+      <div className="footer-container">
+        <div className="footer-grid">
+          <div className="footer-about">
+            <div className="footer-brand">
+              <div className="footer-logo">
+                <MapPin className="footer-logo-icon" />
               </div>
-              <span className="text-xl font-bold">RuralMarket</span>
+              <span className="footer-brand-name">Local Market</span>
             </div>
-            <p className="text-gray-400 mb-4 max-w-md">
-              Connecting rural producers with customers worldwide. Supporting local communities through direct trade and empowering artisans with technology.
+            <p className="footer-description">
+              Connecting local producers with customers worldwide. Supporting local communities through direct trade and empowering artisans with technology.
             </p>
-            <div className="flex space-x-4">
-              <div className="flex items-center space-x-2 text-gray-400">
-                <Mail className="w-4 h-4" />
-                <span className="text-sm">info@ruralmarket.com</span>
+            <div className="footer-contact-info">
+              <div className="contact-item">
+                <Mail className="contact-icon" />
+                <span className="contact-text">info@ruralmarket.com</span>
               </div>
-              <div className="flex items-center space-x-2 text-gray-400">
-                <Phone className="w-4 h-4" />
-                <span className="text-sm">+1 (555) 123-4567</span>
+              <div className="contact-item">
+                <Phone className="contact-icon" />
+                <span className="contact-text">+1 (555) 123-4567</span>
               </div>
             </div>
           </div>
           
-          <div>
-            <h3 className="font-semibold mb-4">Categories</h3>
-            <ul className="space-y-2 text-gray-400">
-              <li><a href="#" className="hover:text-white transition-colors">Food & Beverages</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Clothing</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Gifts & Crafts</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">All Products</a></li>
+          <div className="footer-links">
+            <h3 className="footer-heading">Categories</h3>
+            <ul className="footer-menu">
+              <li><a href="#" className="footer-link">Food & Beverages</a></li>
+              <li><a href="#" className="footer-link">Clothing</a></li>
+              <li><a href="#" className="footer-link">Gifts & Crafts</a></li>
+              <li><a href="#" className="footer-link">All Products</a></li>
             </ul>
           </div>
           
-          <div>
-            <h3 className="font-semibold mb-4">For Sellers</h3>
-            <p className="text-gray-400 mb-4 text-sm">
+          <div className="footer-sellers">
+            <h3 className="footer-heading">For Sellers</h3>
+            <p className="seller-text">
               Want to sell your products? Join our community of rural producers.
             </p>
-            <button className="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2 rounded-lg font-medium transition-colors flex items-center space-x-2">
-              <MessageCircle className="w-4 h-4" />
+            <button className="seller-button">
+              <MessageCircle className="button-icon" />
               <span>Join as Seller</span>
             </button>
           </div>
         </div>
         
-        <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+        <div className="footer-copyright">
           <p>&copy; 2025 RuralMarket. Supporting local producers worldwide.</p>
         </div>
       </div>
