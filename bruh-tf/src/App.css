@@ -10,7 +10,7 @@ body {
   background-color: #EAEFEF;
   font-family: sans-serif;
 }
-/* Header Container */
+/* Header section */
 .header-container {
   background-color: white;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
@@ -23,7 +23,6 @@ body {
   padding-right: 1rem;
   margin-left: auto;
   margin-right: auto;
-  color: pink;
 }
 
 @media (min-width: 640px) {
@@ -80,6 +79,82 @@ body {
   margin: 0;
 }
 
+/* navigation */
+.main-nav {
+  margin-right: 1.5rem;
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 1.5rem;
+}
+
+.nav-item {
+  position: relative;
+}
+
+.nav-link {
+  color: #333446;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.nav-link:hover {
+  color: #7F8CAA;
+}
+
+/* Dropdown Styles */
+.dropdown-toggle {
+  background: none;
+  border: none;
+  color: #374151;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0;
+}
+
+.dropdown-arrow {
+  font-size: 0.6rem;
+  margin-left: 0.25rem;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  padding: 0.5rem 0;
+  min-width: 10rem;
+  z-index: 10;
+  display: none;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-item {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: #333446;
+  text-decoration: none;
+  transition: background-color 0.2s;
+}
+
+.dropdown-item:hover {
+  background-color: #f3f4f6;
+  color: #7F8CAA;
+}
 /* Header Controls */
 .header-controls {
   gap: 1.5rem;
@@ -464,7 +539,6 @@ body {
 }
 
 
- /* 333446: black 7F8CAA: taro 9CAFAA: light green EAEFEF: white-gray */
 .product-card:hover .product-title  {
   color: #333446;
 }
@@ -590,7 +664,7 @@ body {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  border-radius: 0.5rem;
+  border-radius: 9999px;
   padding: 0.5rem 1rem;
   font-size: 0.875rem;
   border: none;

@@ -1,6 +1,6 @@
-import { Search, Filter, MapPin } from 'lucide-react';
+import { Search, MapPin } from 'lucide-react';
 
-const Header = ({ searchTerm, setSearchTerm, showFilters, setShowFilters }) => {
+const Header = ({ searchTerm, setSearchTerm }) => {
   return (
     <>
       {/* Main Header */}
@@ -18,6 +18,24 @@ const Header = ({ searchTerm, setSearchTerm, showFilters, setShowFilters }) => {
             </div>
             
             <div className="d-none d-md-flex align-items-center header-controls">
+              <nav className="main-nav">
+                <ul className="nav-list">
+                  <li className="nav-item">
+                    <a href="#" className="nav-link">About</a>
+                  </li>
+                  <li className="nav-item dropdown">
+                    <button className="dropdown-toggle">
+                      Province <span className="dropdown-arrow"></span>
+                    </button>
+                    <ul className="dropdown-menu">
+                      <li><a href="#" className="dropdown-item">Siem Reap</a></li>
+                      <li><a href="#" className="dropdown-item">Takeo</a></li>
+                      <li><a href="#" className="dropdown-item">Kompot</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </nav>
+              
               <div className="search-container">
                 <Search className="search-icon" />
                 <input
@@ -28,13 +46,6 @@ const Header = ({ searchTerm, setSearchTerm, showFilters, setShowFilters }) => {
                   className="search-input"
                 />
               </div>
-              <button
-                onClick={() => setShowFilters(!showFilters)}
-                className="filter-button"
-              >
-                <Filter className="filter-icon" />
-                <span>Filters</span>
-              </button>
             </div>
           </div>
         </div>
