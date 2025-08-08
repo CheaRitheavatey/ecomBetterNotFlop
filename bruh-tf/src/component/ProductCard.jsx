@@ -2,6 +2,7 @@ import { MapPin, Star, MessageCircle } from 'lucide-react';
 import { handleTelegramContact } from '../utils/telegram.js';
 
 const ProductCard = ({ product, featured = false }) => {
+  // data field
   const cardClasses = `product-card ${featured ? 'featured' : ''}`;
   const imageClasses = `product-image ${featured ? 'featured-image' : ''}`;
   const titleClasses = `product-title ${featured ? 'featured-title' : ''}`;
@@ -22,7 +23,7 @@ const ProductCard = ({ product, featured = false }) => {
         />
         {product.featured && (
           <div className={`featured-badge ${featured ? 'large-badge' : ''}`}>
-            <span>Featured</span>
+            <span>New Product</span>
           </div>
         )}
       </div>
