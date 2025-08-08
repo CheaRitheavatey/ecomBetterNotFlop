@@ -1,6 +1,9 @@
-import { Search, MapPin } from 'lucide-react';
+import { Search, MapPin, Menu } from 'lucide-react';
+import { useState } from 'react';
 
 const Header = ({ searchTerm, setSearchTerm }) => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
   return (
     <>
       {/* Main Header */}
@@ -17,6 +20,7 @@ const Header = ({ searchTerm, setSearchTerm }) => {
               </div>
             </div>
             
+            {/* Desktop Navigation */}
             <div className="d-none d-md-flex align-items-center header-controls">
               <nav className="main-nav">
                 <ul className="nav-list">
@@ -42,28 +46,56 @@ const Header = ({ searchTerm, setSearchTerm }) => {
                   type="text"
                   placeholder="Search products..."
                   value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)}
+                  onChange={(e) => setSearchTerm(e.targetValue)}
                   className="search-input"
                 />
               </div>
             </div>
+
+            {/* Mobile Hamburger Button */}
+            <button 
+              className="d-md-none hamburger-button"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            >
+              <Menu className="hamburger-icon" />
+            </button>
+          </div>
+        </div>
+
+        {/* Mobile Menu */}
+        <div className={`mobile-menu ${isMobileMenuOpen ? 'open' : ''}`}>
+          <nav className="mobile-nav">
+            <ul className="mobile-nav-list">
+              <li className="mobile-nav-item">
+                <a href="#" className="mobile-nav-link">About</a>
+              </li>
+              <li className="mobile-nav-item">
+                <button className="mobile-dropdown-toggle">
+                  Province <span className="dropdown-arrow"></span>
+                </button>
+                <ul className="mobile-dropdown-menu">
+                  <li><a href="#" className="mobile-dropdown-item">Siem Reap</a></li>
+                  <li><a href="#" className="mobile-dropdown-item">Takeo</a></li>
+                  <li><a href="#" className="mobile-dropdown-item">Kompot</a></li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+          
+          <div className="mobile-search-container">
+            <div className="search-container">
+              <Search className="search-icon" />
+              <input
+                type="text"
+                placeholder="Search products..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                className="search-input"
+              />
+            </div>
           </div>
         </div>
       </header>
-
-      {/* Mobile Search */}
-      <div className="d-md-none mobile-search-container">
-        <div className="search-container">
-          <Search className="search-icon" />
-          <input
-            type="text"
-            placeholder="Search products..."
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-            className="search-input"
-          />
-        </div>
-      </div>
     </>
   );
 };
