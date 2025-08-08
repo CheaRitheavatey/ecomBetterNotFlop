@@ -4,35 +4,35 @@ const Header = ({ searchTerm, setSearchTerm, showFilters, setShowFilters }) => {
   return (
     <>
       {/* Main Header */}
-      <header className="bg-white shadow-sm border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
-            <div className="flex items-center space-x-3">
-              <div className="w-8 h-8 bg-gradient-to-br from-emerald-600 to-emerald-700 rounded-lg flex items-center justify-center">
-                <MapPin className="w-5 h-5 text-white" />
+      <header className="header-container">
+        <div className="container header-content">
+          <div className="d-flex align-items-center justify-content-between header-inner">
+            <div className="d-flex align-items-center logo-container">
+              <div className="logo-icon">
+                <MapPin className="icon" />
               </div>
-              <div>
-                <h1 className="text-xl font-bold text-gray-900">RuralMarket</h1>
-                <p className="text-xs text-gray-500">Supporting Local Producers</p>
+              <div className="logo-text">
+                <h1 className="logo-title">Local Market</h1>
+                <p className="logo-subtitle">Supporting Local Producers</p>
               </div>
             </div>
             
-            <div className="hidden md:flex items-center space-x-6">
-              <div className="relative">
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
+            <div className="d-none d-md-flex align-items-center header-controls">
+              <div className="search-container">
+                <Search className="search-icon" />
                 <input
                   type="text"
                   placeholder="Search products..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 w-64"
+                  className="search-input"
                 />
               </div>
               <button
                 onClick={() => setShowFilters(!showFilters)}
-                className="flex items-center space-x-2 px-4 py-2 text-gray-700 hover:text-emerald-600 transition-colors"
+                className="filter-button"
               >
-                <Filter className="w-4 h-4" />
+                <Filter className="filter-icon" />
                 <span>Filters</span>
               </button>
             </div>
@@ -41,15 +41,15 @@ const Header = ({ searchTerm, setSearchTerm, showFilters, setShowFilters }) => {
       </header>
 
       {/* Mobile Search */}
-      <div className="md:hidden bg-white border-b border-gray-200 p-4">
-        <div className="relative">
-          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
+      <div className="d-md-none mobile-search-container">
+        <div className="search-container">
+          <Search className="search-icon" />
           <input
             type="text"
             placeholder="Search products..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+            className="search-input"
           />
         </div>
       </div>

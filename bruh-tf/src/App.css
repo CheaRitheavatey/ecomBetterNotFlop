@@ -1,18 +1,238 @@
+/* primary color:
+     333446: black
+     7F8CAA: taro
+     9CAFAA: light green
+     EAEFEF: white-gray
+
+*/
+
 body {
-  background-color: #f8f9fa;
+  background-color: #9CAFAA;
+  font-family: sans-serif;
   /* light gray background */
 }
-
-h1,
-h2,
-h3 {
-  color: #2c3e50;
+/* Header Container */
+.header-container {
+  background-color: white;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid #e5e7eb;
 }
 
-.card {
-  transition: box-shadow 0.3s ease-in-out;
+.header-content {
+  max-width: 80rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  color: pink;
 }
 
-.card:hover {
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+@media (min-width: 640px) {
+  .header-content {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .header-content {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+.header-inner {
+  height: 4rem;
+}
+
+/* Logo Styles */
+.logo-container {
+  gap: 0.75rem;
+}
+
+.logo-icon {
+  width: 2rem;
+  height: 2rem;
+  /* background: linear-gradient(to bottom right, #FBF3D5, #D6DAC8); */
+  background-color: #7F8CAA;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.logo-icon .icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  color: white;
+}
+
+.logo-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #111827;
+  margin: 0;
+}
+
+.logo-subtitle {
+  font-size: 0.75rem;
+  color: #6b7280;
+  margin: 0;
+}
+
+/* Header Controls */
+.header-controls {
+  gap: 1.5rem;
+}
+
+/* Search Container */
+.search-container {
+  position: relative;
+}
+
+.search-icon {
+  position: absolute;
+  left: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #9CAFAA;
+  width: 1rem;
+  height: 1rem;
+}
+
+.search-input {
+  padding-left: 2.5rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border: 1px solid #7194ca;
+  border-radius: 0.5rem;
+  width: 16rem;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #9CAFAA;
+  box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.5);
+}
+
+/* Filter Button */
+.filter-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  color: #374151;
+  background: none;
+  border: none;
+  transition: color 0.2s;
+}
+
+.filter-button:hover {
+  color: #059669;
+}
+
+.filter-icon {
+  width: 1rem;
+  height: 1rem;
+}
+
+/* Mobile Search */
+.mobile-search-container {
+  background-color: white;
+  border-bottom: 1px solid #e5e7eb;
+  padding: 1rem;
+}
+
+.mobile-search-container .search-input {
+  width: 100%;
+}
+
+
+/* Hero Section */
+.hero-section {
+  /* background: linear-gradient(to right, #333446, #7F8CAA); */
+  background-color: #7F8CAA;
+  color: white;
+}
+
+.hero-content {
+  max-width: 80rem;
+  padding: 4rem 1rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 640px) {
+  .hero-content {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-content {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+.hero-text {
+  text-align: center;
+}
+
+/* Hero Title */
+.hero-title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  .hero-title {
+    font-size: 3rem;
+  }
+}
+
+/* Hero Subtitle */
+.hero-subtitle {
+  font-size: 1.25rem;
+  color: white;
+  margin-bottom: 2rem;
+  max-width: 42rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Categories */
+.hero-categories {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+/* Category Button */
+.category-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: rgba(51, 52, 70, 0.25);
+  backdrop-filter: blur(4px);
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  border: none;
+  color: white;
+  transition: all 0.2s;
+}
+
+.category-button:hover {
+  background-color: rgba(51, 52, 70, 0.5);
+  transform: scale(1.05);
+}
+
+.category-icon {
+  width: 1rem;
+  height: 1rem;
 }
