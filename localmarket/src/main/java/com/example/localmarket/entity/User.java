@@ -2,9 +2,11 @@ package com.example.localmarket.entity;
 
 
 import jakarta.persistence.*;
+import lombok.Data;
 
 import java.util.List;
 
+@Data
 @Entity
 @Table(name = "user")
 public class User {

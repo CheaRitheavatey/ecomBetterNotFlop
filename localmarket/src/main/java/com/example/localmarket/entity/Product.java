@@ -1,7 +1,9 @@
 package com.example.localmarket.entity;
 
 import jakarta.persistence.*;
+import lombok.Data;
 
+@Data
 @Entity
 @Table(name = "products")
 public class Product {
@@ -25,7 +27,7 @@ public class Product {
 
     @ManyToOne
     @JoinColumn(name = "seller_id", nullable = false)
-    private User seller;
+    private User user; //user = seller
 
     private Double rating;
 
