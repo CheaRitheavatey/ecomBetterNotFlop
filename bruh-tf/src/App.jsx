@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import CategoryNavigation from "./component/CategoryNavigation";
 import FeaturedProducts from "./component/FeaturedProducts";
 import Footer from "./component/Footer";
@@ -11,6 +11,12 @@ import { CATEGORIES } from "./types";
 
 
 function App() {
+  useEffect(() => {
+    fetch("http://localhost:8080/api/product")
+    .then((res) => res.json())
+    .then((data) => setProducts(data))
+    .catch((err) => console.error(err));
+  }, [])
   const [showFilters, setShowFilters] = useState(false);
   const {
     selectedCategory,

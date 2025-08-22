@@ -31,13 +31,8 @@ public class ProductService {
 
     // save
     public Product save(ProductDTO productDTO) {
-        Product product = new Product();
-        product.setName(productDTO.getName());
-        product.setDescription(productDTO.getDescription());
-        product.setProvince(productDTO.getProvinceDTO());
-        product.setCategory(productDTO.getCategoryDTO());
-        product.setRating(productDTO.getRating());
-        product.setContact(product.getContact());
+        Product product = new Product(productDTO.getId(),productDTO.getName(), productDTO.getDescription(),productDTO.getImgUrl(), productDTO.getPrice(), productDTO.getProvinceDTO(), productDTO.getCategoryDTO(),productDTO.getUserDTO(), productDTO.getRating(), productDTO.getContact());
+//
 
         return productRepository.save(product);
 

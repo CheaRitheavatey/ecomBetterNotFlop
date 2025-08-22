@@ -1,6 +1,7 @@
 package com.example.localmarket.dto;
 
 import com.example.localmarket.entity.Province;
+import com.example.localmarket.entity.User;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
@@ -8,7 +9,7 @@ import java.util.List;
 
 @Data
 @AllArgsConstructor
-public class UserDTO {
+public class UserDTO extends User {
     // data field
     private Long id;
     private String fullname;
