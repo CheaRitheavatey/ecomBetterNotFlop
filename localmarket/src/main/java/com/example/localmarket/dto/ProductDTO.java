@@ -18,4 +18,5 @@ public class ProductDTO {
     private UserDTO userDTO;
     private Double rating;
     private String contact;
+    private String imgUrl;
 }

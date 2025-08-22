@@ -1,9 +1,11 @@
 package com.example.localmarket.entity;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 @Data
+@AllArgsConstructor
 @Entity
 @Table(name = "products")
 public class Product {
@@ -16,6 +18,8 @@ public class Product {
 
     @Column(columnDefinition = "TEXT")
     private String description;
+    private String imgUrl;
+    private double price;
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
@@ -33,4 +37,6 @@ public class Product {
 
     @Column(nullable = false)
     private String contact;
+
+
 }
