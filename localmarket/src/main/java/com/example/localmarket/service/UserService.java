@@ -22,7 +22,7 @@ public class UserService {
 //    }
 
     public User save(UserDTO userDTO) {
-        User user = new User();
+        User seller = new User(userDTO.getId(), userDTO.getFullname(), userDTO.getPhoneNumber(), userDTO.getPassword(), userDTO.getProvince(), userDTO.getRating());
         user.setFullname(userDTO.getFullname());
         user.setPassword(userDTO.getPassword());
         user.setProvince(userDTO.getProvince());

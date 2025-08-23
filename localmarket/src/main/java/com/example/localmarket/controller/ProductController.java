@@ -16,6 +16,7 @@ public class ProductController {
     private ProductService productService;
 
     // GET
+    @GetMapping
     public List<Product> getAllProduct() {
         return productService.finaAll();
     }

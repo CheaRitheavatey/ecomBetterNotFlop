@@ -4,10 +4,11 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
+
 @Data
 @AllArgsConstructor
-@Entity
 @Table(name = "products")
+@Entity
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -31,7 +32,7 @@ public class Product {
 
     @ManyToOne
     @JoinColumn(name = "seller_id", nullable = false)
-    private User user; //user = seller
+    private User seller; //user = seller
 
     private Double rating;
 
@@ -40,3 +41,6 @@ public class Product {
 
 
 }
+
+
+

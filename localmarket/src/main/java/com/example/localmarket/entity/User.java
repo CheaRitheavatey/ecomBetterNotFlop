@@ -2,13 +2,16 @@ package com.example.localmarket.entity;
 
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Data
 @Entity
-@Table(name = "user")
+@Table(name = "seller")
+@AllArgsConstructor
 public class User {
     // data field
     @Id
@@ -30,5 +33,5 @@ public class User {
     private Double rating;
 
     @OneToMany(mappedBy = "seller", cascade = CascadeType.ALL)
-    private List<Product> products;
+    private List<Product> products ;
 }

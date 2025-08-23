@@ -9,12 +9,13 @@ import java.util.List;
 
 @Data
 @AllArgsConstructor
-public class UserDTO extends User {
+public class UserDTO {
     // data field
     private Long id;
     private String fullname;
     private String phoneNumber;
     private String password;
     private Province province;
+    private double rating;
     private List<ProductDTO> productDTOS;
 }
