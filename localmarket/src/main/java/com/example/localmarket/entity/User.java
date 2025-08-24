@@ -32,8 +32,6 @@ public class User {
     @Column(nullable = false)
     private Province province;
 
-    private Double rating;
-
     @OneToMany(mappedBy = "seller", cascade = CascadeType.ALL)
 //    @JsonIgnore
     private List<Product> products ;

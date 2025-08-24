@@ -18,6 +18,5 @@ public class UserDTO {
     private String phoneNumber;
     private String password;
     private Province province;
-    private double rating;
     private List<ProductDTO> productDTOS;
 }
