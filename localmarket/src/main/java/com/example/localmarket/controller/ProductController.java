@@ -20,7 +20,7 @@ public class ProductController {
     // GET
     @GetMapping
     public List<ProductDTO> getAllProduct() {
-        return productService.getAllProduct();
+        return productService.getAllProducts();
     }
 
 
@@ -30,7 +30,7 @@ public class ProductController {
     }
 
     @GetMapping(path = "/search")
-    public List<ProductDTO> getProductBySearch(@PathVariable String searchTerm) {
+    public List<ProductDTO> getProductBySearch(@RequestParam("q") String searchTerm) {
         return productService.searchByName(searchTerm);
     }
 
