@@ -1,6 +1,7 @@
 package com.example.localmarket.entity;
 
 
+import com.example.localmarket.dto.ProductDTO;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -32,7 +33,7 @@ public class User {
     @Column(nullable = false)
     private Province province;
 
-    @OneToMany(mappedBy = "seller", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "seller", cascade = CascadeType.ALL, orphanRemoval = true)
 //    @JsonIgnore
     private List<Product> products ;
 }

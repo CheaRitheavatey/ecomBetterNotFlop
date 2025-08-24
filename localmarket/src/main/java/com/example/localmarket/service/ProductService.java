@@ -3,73 +3,98 @@ package com.example.localmarket.service;
 import com.example.localmarket.dto.ProductDTO;
 import com.example.localmarket.entity.Category;
 import com.example.localmarket.entity.Product;
+import com.example.localmarket.entity.User;
 import com.example.localmarket.repository.ProductRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.example.localmarket.repository.UserRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
+@RequiredArgsConstructor
 public class ProductService {
-    @Autowired
-    private ProductRepository productRepository;
 
-    // find all product
-    public List<ProductDTO> getAllProduct() {
-        return  productRepository.findAll().stream().map(this::toDTO).collect(Collectors.toList());
+    private final ProductRepository productRepository;
+    private final UserRepository userRepository;
+
+    // -----------------------------
+    // Public methods (CRUD)
+    // -----------------------------
+
+    public List<ProductDTO> getAllProducts() {
+        return productRepository.findAll()
+                .stream()
+                .map(this::toDTO)
+                .collect(Collectors.toList());
     }
 
-    // find by category
+    public ProductDTO getProductById(Long id) {
+        Product product = productRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Product not found"));
+        return toDTO(product);
+    }
+
     public List<ProductDTO> findByCategory(Category category) {
-        return productRepository.findByCategory(category);
+        return productRepository.findByCategory(category)
+                .stream()
+                .map(this::toDTO)
+                .collect(Collectors.toList());
     }
 
-    // find by search
     public List<ProductDTO> searchByName(String searchTerm) {
-        return productRepository.searchByName(searchTerm);
+        return productRepository.searchByName(searchTerm)
+                .stream()
+                .map(this::toDTO)
+                .collect(Collectors.toList());
     }
 
-    // create product
     public ProductDTO createProduct(ProductDTO dto) {
         Product product = toEntity(dto);
-        return toDTO(productRepository.save(product));
+        Product saved = productRepository.save(product);
+        return toDTO(saved);
     }
 
-    // get product by id
-    public ProductDTO getProductById(Long id) {
-        return productRepository.findById(id).map(this::toDTO).orElseThrow(() -> new RuntimeException("Product not found"));
-    }
-    // convert entity to dto
+    // -----------------------------
+    // Mapping methods
+    // -----------------------------
+
+    // Entity → DTO
     private ProductDTO toDTO(Product product) {
-        return new ProductDTO(
-                product.getId(),
-                product.getName(),
-                product.getDescription(),
-                product.getImgurl(),
-                product.getPrice(),
-                product.getSellerName(),
-                product.getProvince(),
-                product.getCategory(),
-                product.getRating(),
-                product.getContactNumber()
-        );
+        ProductDTO dto = new ProductDTO();
+        dto.setId(product.getId());
+        dto.setName(product.getName());
+        dto.setDescription(product.getDescription());
+        dto.setImgurl(product.getImgurl());
+        dto.setPrice(product.getPrice());
+        dto.setProvince(product.getProvince());
+        dto.setCategory(product.getCategory());
+        dto.setRating(product.getRating());
+
+        // Only seller name
+        dto.setSellerName(product.getSeller().getFullname());
+
+        return dto;
     }
 
-    // convert dto to entity
-    private Product toEntity(ProductDTO productDTO) {
-        return new Product(
-                productDTO.getId(),
-                productDTO.getName(),
-                productDTO.getDescription(),
-                productDTO.getImgurl(),
-                productDTO.getPrice(),
-                productDTO.getSellerName(),
-                productDTO.getProvince(),
-                productDTO.getCategory(),
-                productDTO.getRating(),
-                productDTO.getContactNumber()
-        );
-    }
+    // DTO → Entity
+    private Product toEntity(ProductDTO dto) {
+        Product product = new Product();
+        product.setId(dto.getId());
+        product.setName(dto.getName());
+        product.setDescription(dto.getDescription());
+        product.setImgurl(dto.getImgurl());
+        product.setPrice(dto.getPrice());
+        product.setProvince(dto.getProvince());
+        product.setCategory(dto.getCategory());
+        product.setRating(dto.getRating());
 
+        // Assign seller from user repository
+        User seller = userRepository.findUserByFullname(dto.getSellerName())
+                .orElseThrow(() -> new RuntimeException("Seller not found"));
+        product.setSeller(seller);
+
+        return product;
+    }
 }

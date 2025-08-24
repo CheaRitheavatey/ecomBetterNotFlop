@@ -8,8 +8,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
+//@AllArgsConstructor
+//@NoArgsConstructor
 public class ProductDTO {
     // data field
     private Long id;
@@ -21,5 +21,4 @@ public class ProductDTO {
     private Province province;
     private Category category;
     private Double rating;
-    private String contactNumber;
 }

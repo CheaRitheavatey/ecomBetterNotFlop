@@ -1,5 +1,6 @@
 package com.example.localmarket.dto;
 
+import com.example.localmarket.entity.Product;
 import com.example.localmarket.entity.Province;
 import com.example.localmarket.entity.User;
 import lombok.AllArgsConstructor;
@@ -18,5 +19,5 @@ public class UserDTO {
     private String phoneNumber;
     private String password;
     private Province province;
-    private List<ProductDTO> productDTOS;
+    private List<ProductDTO> product;
 }

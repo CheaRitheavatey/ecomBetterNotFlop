@@ -27,8 +27,9 @@ public class Product {
     @Column(nullable = false)
     private Double price;
 
-    @Column(nullable = false)
-    private String sellerName;
+    @ManyToOne
+    @JoinColumn(name = "seller_id", nullable = false)
+    private User seller;
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
@@ -40,6 +41,5 @@ public class Product {
 
     private Double rating;
 
-    @Column(nullable = false)
-    private String contactNumber;
+
 }
