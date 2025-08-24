@@ -5,7 +5,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -19,30 +18,26 @@ public class Product {
     @Column(nullable = false)
     private String name;
 
-    @Column(columnDefinition = "TEXT")
+    @Column(nullable = false)
     private String description;
-    private String imgUrl;
-    private double price;
 
-    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private String imgurl;
+
+    @Column(nullable = false)
+    private Double price;
+
+    @Column(nullable = false)
+    private String sellerName;
+
     @Column(nullable = false)
     private Province province;
 
-    @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private Category category;
-
-    @ManyToOne
-    @JoinColumn(name = "seller_id", nullable = false)
-    private User seller; //user = seller
 
     private Double rating;
 
     @Column(nullable = false)
-    private String contact;
-
-
+    private String contactNumber;
 }
-
-
-

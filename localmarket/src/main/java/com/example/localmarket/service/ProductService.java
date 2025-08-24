@@ -33,7 +33,6 @@ public class ProductService {
     // save
     public Product save(ProductDTO productDTO) {
         Product product = new Product();
-        product.setId(productDTO.getId());
         product.setName(productDTO.getName());
         product.setDescription(productDTO.getDescription());
         product.setImgUrl(productDTO.getImgUrl());
@@ -43,12 +42,8 @@ public class ProductService {
 
         // Convert UserDTO → User
         User seller = new User();
-        seller.setId();
-        seller.setFullname(productDTO.getName());
-        seller.setPhoneNumber(productDTO.getContact());
-        seller.setPassword(productDTO.get());
-        seller.setProvince(productDTO.getProvinceDTO());
-        seller.setRating(productDTO.getRating());
+        seller.setId(productDTO.getUserDTO().getId());
+        seller.setId(productDTO.getSellername();
 
         product.setSeller(seller);
         product.setRating(productDTO.getRating());

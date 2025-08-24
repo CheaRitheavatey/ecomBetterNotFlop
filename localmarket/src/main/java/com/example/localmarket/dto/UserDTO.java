@@ -4,11 +4,13 @@ import com.example.localmarket.entity.Province;
 import com.example.localmarket.entity.User;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.List;
 
 @Data
 @AllArgsConstructor
+@NoArgsConstructor
 public class UserDTO {
     // data field
     private Long id;
