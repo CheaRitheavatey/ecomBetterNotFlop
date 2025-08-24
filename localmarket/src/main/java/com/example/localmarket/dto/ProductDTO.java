@@ -16,7 +16,7 @@ public class ProductDTO {
     private double price;
     private Province provinceDTO;
     private Category categoryDTO;
-    private UserDTO userDTO;
+    private String sellname;
     private Double rating;
     private String contact;
     private String imgUrl;

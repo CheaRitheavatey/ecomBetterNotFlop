@@ -19,21 +19,21 @@ public class DataInitializer {
             User maria = new User();
             maria.setFullname("Maria");
             maria.setProvince(Province.PHNOM_PENH);
-            maria.setPhoneNumber("1111111");
+            maria.setPhoneNumber("000000000");
             maria.setPassword("1111111");
             userRepository.save(maria);
 
             User carlos = new User();
             carlos.setProvince(Province.TAKEO);
             carlos.setFullname("Carlos");
-            carlos.setPhoneNumber("2222222");
+            carlos.setPhoneNumber("999999999");
             carlos.setPassword("2222222");
             userRepository.save(carlos);
 
             User ana = new User();
             ana.setFullname("Ana");
             ana.setPassword("3333333");
-            ana.setPhoneNumber("3333333");
+            ana.setPhoneNumber("888888");
             ana.setProvince(Province.SIEM_REAP);
             userRepository.save(ana);
 

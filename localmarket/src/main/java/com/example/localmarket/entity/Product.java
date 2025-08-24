@@ -3,10 +3,12 @@ package com.example.localmarket.entity;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 
 @Data
 @AllArgsConstructor
+@NoArgsConstructor
 @Table(name = "products")
 @Entity
 public class Product {

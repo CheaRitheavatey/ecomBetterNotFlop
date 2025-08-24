@@ -22,12 +22,14 @@ public class UserService {
 //    }
 
     public User save(UserDTO userDTO) {
-        User seller = new User(userDTO.getId(), userDTO.getFullname(), userDTO.getPhoneNumber(), userDTO.getPassword(), userDTO.getProvince(), userDTO.getRating());
-        user.setFullname(userDTO.getFullname());
-        user.setPassword(userDTO.getPassword());
-        user.setProvince(userDTO.getProvince());
-        user.setPhoneNumber(userDTO.getPhoneNumber());
+        User seller = new User();
+        seller.setId(userDTO.getId());
+        seller.setFullname(userDTO.getFullname());
+        seller.setPhoneNumber(userDTO.getPhoneNumber());
+        seller.setPassword(userDTO.getPassword());
+        seller.setProvince(userDTO.getProvince());
+        seller.setRating(userDTO.getRating());
 
-        return userRepository.save(user);
+        return userRepository.save(seller);
     }
 }
