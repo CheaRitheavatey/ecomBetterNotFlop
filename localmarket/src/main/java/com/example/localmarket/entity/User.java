@@ -17,7 +17,6 @@ import java.util.List;
 @NoArgsConstructor
 @Builder
 public class User {
-    // data field
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -25,41 +24,66 @@ public class User {
     @Column(nullable = false)
     private String fullname;
 
+    @Column(unique = true)
+    private String email;
+
     @Column(nullable = false, unique = true)
-    private String phoneNumber; // for telegram login
+    private String phoneNumber;
 
     @Column(nullable = false)
     private String password;
 
-    @Column(nullable = false)
     @Enumerated(EnumType.STRING)
     private Province province;
 
-    @Column(nullable = false)
     @Enumerated(EnumType.STRING)
-    @Builder.Default
-    private Role role = Role.ROLE_BUYER;
+    @Column(nullable = false)
+    private Role role;
 
-    private String avatarUrl;
+    private String profileImageUrl;
 
-    private String bio;
+    private String shopName;
 
-//    telegram chat id for bot communication
+    private String shopDescription;
+
+    @Column(nullable = false)
+    private boolean enabled = true;
+
+    @Column(nullable = false)
+    private boolean telegramRegistered = false;
+
     private Long telegramChatId;
 
-    @Column(nullable = false)
-    @Builder.Default
-    private Boolean enabled = true;
+    @Column(updatable = false)
+    private LocalDateTime createdAt;
 
-    @Builder.Default
-    private LocalDateTime createdAt = LocalDateTime.now();
+    @PrePersist
+    public void prePersist() {
+        createdAt = LocalDateTime.now();
+    }
 
-    @OneToMany(mappedBy = "seller", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
-//    @JsonIgnore
+    @OneToMany(mappedBy = "seller", cascade = CascadeType.ALL)
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
-    private List<Product> products ;
+    private List<Product> products;
 
-
+    @OneToMany(mappedBy = "buyer", cascade = CascadeType.ALL)
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
     private List<Order> orders;
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
+    private List<CartItem> cartItems;
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
+    private List<Review> reviews;
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
+    private List<WishlistItem> wishlistItems;
 }
