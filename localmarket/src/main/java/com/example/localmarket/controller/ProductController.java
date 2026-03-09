@@ -1,8 +1,10 @@
 package com.example.localmarket.controller;
 
 import com.example.localmarket.dto.ProductDTO;
+import com.example.localmarket.dto.UserDTO;
 import com.example.localmarket.entity.Category;
 import com.example.localmarket.entity.Product;
+import com.example.localmarket.entity.User;
 import com.example.localmarket.service.ProductService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,12 +28,12 @@ public class ProductController {
 
     @GetMapping(path = "/category/{category}")
     public List<ProductDTO> getProductByCategory(@PathVariable Category category) {
-        return productService.findByCategory(category);
+        return productService.getByCategory(category);
     }
 
     @GetMapping(path = "/search")
     public List<ProductDTO> getProductBySearch(@RequestParam("q") String searchTerm) {
-        return productService.searchByName(searchTerm);
+        return productService.search(searchTerm);
     }
 
     @GetMapping(path = "/{id}")
@@ -41,7 +43,7 @@ public class ProductController {
 
     // POST
     @PostMapping
-    public ProductDTO createProduct(@RequestBody ProductDTO dto) {
-        return productService.createProduct(dto);
+    public ProductDTO createProduct(@RequestBody ProductDTO dto, @RequestBody User seller) {
+        return productService.createProduct(dto,seller);
     }
 }

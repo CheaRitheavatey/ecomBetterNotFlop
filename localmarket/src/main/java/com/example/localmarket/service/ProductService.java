@@ -1,17 +1,13 @@
 package com.example.localmarket.service;
 
 import com.example.localmarket.dto.ProductDTO;
-import com.example.localmarket.entity.Category;
-import com.example.localmarket.entity.Product;
-import com.example.localmarket.entity.Province;
-import com.example.localmarket.entity.User;
+import com.example.localmarket.entity.*;
 import com.example.localmarket.repository.ProductRepository;
 import com.example.localmarket.repository.UserRepository;
-import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
-
+import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 import java.util.stream.Collectors;
 
